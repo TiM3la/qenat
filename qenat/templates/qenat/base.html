@@ -1,0 +1,99 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Commissioner:wght@100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Libertinus+Sans:ital,wght@0,400;0,700;1,400&family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="nav-bar">
+        <div class="nav-container">
+            <a href="{% url 'home' %}" class="nav-logo-link">
+                <div class="nav-logo">
+                    <img src="{% static 'qenat/qenat-logo.png' %}" alt="" class="logo">
+                    <h1 class="name">Мхце Ренат<br>Казбекович</h1>
+                </div>
+            </a>
+            <div class="drop">
+                <ul class="menu">
+                    <a href="{% url 'home' %}" class="item-link">
+                        <li class="menu-item">Главная</li>
+                    </a>
+                    <a href="{% url 'articles' %}" class="item-link">
+                        <li class="menu-item">Труды</li>
+                    </a>
+                    <a href="{% url 'books' %}" class="item-link">
+                        <li class="menu-item">Сборники</li>
+                    </a>
+                    <a href="{% url 'awards' %}" class="item-link">
+                        <li class="menu-item">Достижения</li>
+                    </a>
+                    <a href="{% url 'gallery' %}" class="item-link">
+                        <li class="menu-item">Галерея</li>
+                    </a>
+                    <a href="{% url 'contacts' %}" class="item-link">
+                        <li class="menu-item">Контакты</li>
+                    </a>
+                </ul>
+                <button class="burger-btn">
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                </button>
+            </div>
+
+
+        </div>
+    </div>
+
+    {% block content  %}{% endblock %}
+
+    <div class="footer">
+        <div class="nav-footer">
+            <div class="logo-mail">
+                <a href="{% url 'home' %}" class="nav-logo-link">
+                    <div class="nav-logo" id="foot-logo">
+                        <img src="{% static 'qenat/qenat-logo.png' %}" alt="" class="logo">
+                        <h1 class="name">Мхце Ренат<br>Казбекович</h1>
+                    </div>
+                </a>
+                <div class="foot-mail">
+                    <img src="{% static 'qenat/mail-icon.svg' %}" alt="" class="mail-icon">
+                    <h1 class="mail-text">qenat@yandex.ru</h1>
+                </div>
+            </div>
+
+            <div class="foot-menus">
+                <ul class="foot-menu">
+                    <a href="{% url 'home' %}" class="foot-menu-link">
+                        <li class="foot-menu-item">Главная</li>
+                    </a>
+                    <a href="{% url 'articles' %}" class="foot-menu-link">
+                        <li class="foot-menu-item">Труды</li>
+                    </a>
+                    <a href="{% url 'books' %}" class="foot-menu-link">
+                        <li class="foot-menu-item">Сборники</li>
+                    </a>
+                </ul>
+                <ul class="foot-menu">
+                    <a href="{% url 'awards' %}" class="foot-menu-link">
+                        <li class="foot-menu-item">Достижения</li>
+                    </a>
+                    <a href="{% url 'gallery' %}" class="foot-menu-link">
+                        <li class="foot-menu-item">Галерея</li>
+                    </a>
+                    <a href="{% url 'contacts' %}" class="foot-menu-link">
+                        <li class="foot-menu-item">Контакты</li>
+                    </a>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

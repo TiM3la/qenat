@@ -1,0 +1,95 @@
+{% extends 'qenat/base.html' %}
+
+{% block content %}
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Мхце Ренат | Главная</title>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Commissioner:wght@100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Libertinus+Sans:ital,wght@0,400;0,700;1,400&family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="content">
+        <div class="main-container">
+            <div class="about">
+                <div class="about-title-text">
+                    <div class="title-icon">
+                        <h1 class="title">Об авторе</h1>
+                        <img src="{% static 'qenat/about-icon.svg' %}" alt="" class="icon">
+                    </div>
+                    <p class="about-text">Мхце Ренат Казбекович - выпускник бакалавриата исторического факультета Северо-кавказского федерального университета. Автор многочисленных статей, участник конференций. Гениальный историк, миллиардер, филантроп.</p>
+                </div>
+                <img src="{% static 'qenat/about-img.png' %}" alt="" class="about-img">
+            </div>
+            <div class="news">
+                <div class="title-icon">
+                    <h1 class="title">Новости</h1>
+                    <img src="{% static 'qenat/news-icon.svg' %}" alt="" class="icon">
+                </div>
+            </div>
+        </div>
+        <div class="big-container">
+            <ul class="news-cards">
+                {% for new in news %}
+                <li class="new-card">
+                    {% if new.type_ == 'article' %}
+                    <a href="{% url 'article' new.id %}" class="card-link">
+                    {% endif %}
+                    {% if new.type_ == 'book' %}
+                    <a href="{% url 'book' new.id %}" class="card-link">
+                    {% endif %}
+                    {% if new.type_ == 'award' %}
+                    <a href="{% url 'award' new.id %}" class="card-link">
+                    {% endif %}
+                    {% if new.type_ == 'photo' %}
+                    <a href="{% url 'photo' new.id %}" class="card-link">
+                    {% endif %}
+                        <div class="card-info">
+                            <div class="photo-text">
+                                <div class="foto-frame">
+                                    <img src="{{ new.image.url }}" alt="" class="card-img">
+                                </div>
+                                {% if new.type_ == 'article' %}
+                                <p class="card-text">
+                                    {{ new.type }} «{{ new.title }}»
+                                </p>
+                                {% endif %}
+                                {% if new.type_ == 'book' %}
+                                <p class="card-text">
+                                    Сборник «{{ new.title }}»
+                                </p>
+                                {% endif %}
+                                {% if new.type_ == 'award' %}
+                                <p class="card-text">
+                                    Достижение «{{ new.title }}»
+                                </p>
+                                {% endif %}
+                                {% if new.type_ == 'photo' %}
+                                <p class="card-text">
+                                    Фото «{{ new.title }}»
+                                </p>
+                                {% endif %}
+                            </div>
+                            <div class="card-meta">
+                                <h1 class="meta-date">{{ new.date }}</h1>
+                                {% if new.type_ == 'article' and new.url %}
+                                <h1 class="meta-publication">опубликовано</h1>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
+
+{% endblock %}

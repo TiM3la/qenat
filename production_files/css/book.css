@@ -1,0 +1,170 @@
+* {
+    margin: 0;
+    padding: 0;
+
+    background-color: #FFFCF7;
+    color: #1C0F13;
+
+    font-family: "Commissioner", sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+}
+.main-container {
+    margin-left: 22%;
+    margin-right: 22%;
+
+    padding-top: 23px;
+}
+.news {
+    display: flex;
+    justify-content: space-between;
+
+    align-items: flex-end;
+}
+.title-icon {
+    display: flex;
+    align-items: flex-end;
+}
+.icon {
+    margin-left: 7px;
+
+    padding-top: 5px;
+}
+.title {
+    font-size: 1.25rem;
+}
+.title-status {
+    margin-left: 40px;
+
+    font-size: 0.9rem;
+
+    color: #2B625E;
+}
+.title-date {
+    font-size: 0.9rem;
+}
+.photo {
+    height: 160px;
+    width: 160px;
+
+    margin-left: 20px;
+
+    object-fit: cover;
+
+    border-radius: 20px;
+
+    background-color: rgba(255, 252, 247, 0);
+}
+.text-photo {
+    display: flex;
+    justify-content: space-between;
+
+    margin-top: 42px;
+}
+.text {
+    font-size: 1.25rem;
+}
+.button {
+    display: inline-block;
+
+    border-radius: 40px;
+    border-color: #A1B5D8;
+    border-style: solid;
+    border-width: 2px;
+
+    padding-inline: 25px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+    text-decoration: none;
+
+    margin-top: 46px;
+}
+.button, .button-download {
+
+    position: relative;
+    background: #fffcf7; /* Исходный цвет фона (должен совпадать с крайними цветами градиента) */
+    z-index: 1;
+
+    transition: background-color 0.5s ease;
+}
+.button::before, .button-download::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(
+            90deg,
+            rgba(255, 252, 247, 1) 0%,
+            rgba(161, 181, 216, 1) 50%,
+            rgba(255, 252, 247, 1) 100%
+    );
+    opacity: 0; /* Начальная прозрачность */
+    transition: opacity 0.5s ease;
+    z-index: -1;
+    border-radius: inherit; /* Для сохранения скруглений */
+}
+
+.button:hover::before, .button-download:hover::before {
+    opacity: 1;
+    transition-duration: 0.1s;/* Плавное появление градиента */
+}
+.button:active::before, .button-download:active::before {
+    background-image: linear-gradient(
+            90deg,
+            rgba(255, 252, 247, 1) 0%,
+            rgba(94, 127, 187, 1) 50%,
+            rgba(255, 252, 247, 1) 100%
+    ) !important;
+    opacity: 1 !important;
+    transition-duration: 0.1s;
+}
+.button-download {
+    display: inline-block;
+
+    border-radius: 40px;
+    border-color: #A1B5D8;
+    border-style: solid;
+    border-width: 2px;
+
+    padding-inline: 25px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+    text-align: center;
+
+    font-size: 1.25rem;
+    text-decoration: none;
+
+    margin-top: 46px;
+}
+
+.btn-frame {
+    text-align: center;
+
+    display: none;
+}
+.pdf-view {
+    display: flex;
+    justify-content: center;
+
+    margin-top: 46px;
+
+    width: 100%;
+    height: 1200px;
+}
+
+@media(max-width: 1000px) {
+    .main-container {
+        margin-left: 6%;
+        margin-right: 6%;
+    }
+    .btn-frame {
+        display: block;
+    }
+    .pdf-view {
+        display: none;
+    }
+}

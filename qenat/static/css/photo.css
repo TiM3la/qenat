@@ -1,0 +1,106 @@
+* {
+    margin: 0;
+    padding: 0;
+
+    background-color: #FFFCF7;
+    color: #1C0F13;
+
+    font-family: "Commissioner", sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+}
+.main-container {
+    margin-left: 22%;
+    margin-right: 22%;
+
+    padding-top: 23px;
+}
+.title-icon {
+    display: flex;
+}
+.icon {
+    margin-left: 7px;
+
+    padding-top: 5px;
+}
+.title {
+    font-size: 1.25rem;
+}
+.big-container {
+    margin-left: calc(22% - 15px);
+    margin-right: calc(22% - 15px);
+
+    min-height: 1007px;
+}
+.photo {
+    break-inside: avoid;
+    margin-bottom: 1rem;
+
+    margin-top: 15px;
+
+    background-color: rgba(255, 255, 255, 0);
+}
+.photo-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    background-color: rgba(255, 255, 255, 0);
+}
+.photo-meta {
+
+    padding-top: 10px;
+    padding-inline: 15px;
+
+    max-height: 75vh;
+    max-width: 75vw;
+}
+.photo-img {
+    max-height: 75vh;
+    max-width: 100%;
+    border-radius: 20px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    justify-content: center;
+
+
+
+    background-color: rgba(255, 255, 255, 0);
+}
+.photo-frame {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+
+    padding: 15px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    border-radius: 35px;
+}
+.photo-text {
+    background-color: rgba(255, 255, 255, 0);
+}
+.photo-date {
+    background-color: rgba(255, 255, 255, 0);
+}
+@media(max-width: 1000px) {
+    .main-container {
+        margin-left: 6%;
+        margin-right: 6%;
+    }
+    .big-container {
+        margin-left: calc(6% - 15px);
+        margin-right: calc(6% - 15px);
+    }
+    .photo-gallery {
+        columns: 1;
+        column-gap: 16px;
+
+        margin-top: 30px;
+    }
+}

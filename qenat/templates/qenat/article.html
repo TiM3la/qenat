@@ -1,0 +1,51 @@
+{% extends 'qenat/base.html' %}
+
+{% block content %}
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Мхце Ренат | {{ article.title }}</title>
+    <link rel="stylesheet" href="{% static 'css/article.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Commissioner:wght@100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Libertinus+Sans:ital,wght@0,400;0,700;1,400&family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+<div class="content">
+    <div class="main-container">
+        <div class="news">
+            <div class="title-icon">
+                <h1 class="title">{{ article.type }}</h1>
+                <img src="{% static 'qenat/articles-icon.svg' %}" alt="" class="icon">
+                {% if article.url %}
+                <h1 class="title-status">опубликовано</h1>
+                {% endif %}
+            </div>
+            <h1 class="title-date">{{ article.date }}</h1>
+        </div>
+        <div class="text-photo">
+            <p class="text">{{ article.title }}</p>
+            <div class="photo-frame">
+                <img src="{{ article.image.url }}" alt="" class="photo">
+            </div>
+        </div>
+        {% if article.url %}
+        <a href="{{ article.url }}" class="button" target="_blank">Интернет-издание</a>
+        {% endif %}
+        <embed class="pdf-view" type="application/pdf" src="{{ article.file.url }} "/>
+        <div class="btn-frame">
+            <a href="{{ article.file.url }}" download class="button-download">Загрузить PDF-файл</a>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
+
+{% endblock %}
