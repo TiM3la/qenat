@@ -1,0 +1,55 @@
+.logo {
+    border-radius: 20px;
+}
+@media(max-width: 1000px) {
+    html {
+        font-size: 40px
+    }
+    .card-img {
+        height: 200px;
+        width: 200px;
+
+        object-fit: cover;
+    }
+    .text-photo > .photo-frame > .photo {
+        height: 200px;
+        width: 200px;
+
+        object-fit: cover;
+    }
+    .foto-frame {
+        height: 200px;
+        width: 200px;
+        background-color: rgba(255, 252, 247, 0);
+    }
+     .text-photo > .photo-frame {
+        height: 200px;
+        width: 200px;
+        background-color: rgba(255, 252, 247, 0);
+    }
+    .card-text {
+        font-size: 1rem ;
+        margin-left: 15px;
+    }
+    .meta-publication, .meta-date {
+        font-size: 0.9rem
+    }
+    .photo-text, .photo-date {
+        font-size: 1rem;
+    }
+    .card-title {
+        font-size: 1.5rem;
+    }
+    .card-tag {
+        font-size: 1rem;
+    }
+    .button, .button-download {
+        font-size: 1rem;
+    }
+    .content {
+        min-height: 100vh;
+    }
+    .photo-meta {
+        max-width: 100%;
+    }
+}

@@ -162,6 +162,9 @@
     text-decoration: none;
 }
 @media(max-width: 1000px) {
+    html {
+        font-size: 40px
+    }
     .main-container {
         margin-left: 6%;
         margin-right: 6%;

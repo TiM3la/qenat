@@ -4,7 +4,8 @@
 
     background-color: #FFFCF7;
     color: #1C0F13;
-
+}
+html {
     font-family: "Commissioner", sans-serif;
     font-size: 20px;
     font-weight: 400;
@@ -313,7 +314,7 @@
 
 @media(max-width: 1000px) {
     html {
-        font-size: 20px
+        font-size: 40px
     }
     .nav-container {
         margin-left: 6%;
@@ -332,6 +333,10 @@
     .menu{
         display: none;
     }
+    .menu-item {
+        font-size: 1rem;
+
+    }
     .burger-btn:hover .burger-icon {
 
     }
@@ -346,8 +351,10 @@
         position: absolute;
 
         right: 0;
-        top: 123px;
+        top: 5rem;
         border-radius: 20px;
+
+
 
         background-color: #2B625E;
     }
@@ -355,6 +362,7 @@
         display: block;
 
         background-color: #2B625E;
+        padding: 1.3rem;
     }
     .nav-footer {
         margin-left: 6%;
@@ -391,10 +399,28 @@
         display: flex;
         justify-content: center;
 
-        padding: 30px;
+        padding: 1.5rem;
 
         font-size: 1.25rem;
-
     }
+    .name {
+        margin-left: 20px;
+    }
+    .icon {
+        margin-left: 10px;
+        width: 1rem;
+        margin-top: 8px;
+    }
+    .mail-text {
+        font-size: 1rem;
+    }
+     .mail-icon {
+        width: 1rem;
+        margin-top: 4px;
+    }
+     .burger-btn {
+         height: 2.5rem;
+         width: 2rem;
+     }
 
 }
